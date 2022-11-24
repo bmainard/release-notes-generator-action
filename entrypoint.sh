@@ -74,6 +74,7 @@ if [[ "workflow_dispatch" == "$GITHUB_EVENT_NAME" || "$ACTION" == "$TRIGGER_ACTI
     echo "Creating release notes for Milestone $MILESTONE_ID_TO_USE into the $OUTPUT_FILENAME file"
     java -jar /github-release-notes-generator.jar \
     --changelog.repository=${OWNER_ID}/${REPOSITORY_NAME} \
+    --github.apiUrl=${GITHUB_API_URL} \
     --github.username=${GH_USERNAME} \
     --github.password=${GITHUB_TOKEN} \
     --changelog.milestone-reference=id \
